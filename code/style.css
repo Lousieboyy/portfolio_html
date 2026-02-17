@@ -1,0 +1,250 @@
+/*Define variable*/
+:root {
+    --items-count: 6;
+    --width: 270px; 
+    --height: 270px; 
+    --duration: 12s;
+}
+
+*{
+    font-family: 'Poppins', sans-serif; 
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+
+}
+
+/* Navigation bar */
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+nav{
+    margin: 0;
+    padding: 1px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    position: sticky;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+li{
+    padding: 5px 10px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a:hover{
+    color: blue;
+}
+
+/* Text */
+.text, .text-display{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    font-style: italic;
+}
+
+.text-display{
+    font-size: 70px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.back-text{
+    position: relative;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    font-size:300px;
+    font-weight: 700; 
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    line-height: 250px;
+    animation: floatText 2s ease-in-out infinite;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.1);
+}
+
+.front-text{
+    position: relative;
+    color: black;
+    font-weight: bold;
+    font-size:300px;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700; 
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    line-height: 20px;
+    animation: floatText 3s ease-in-out infinite;
+    color: transparent;
+    -webkit-text-stroke: 4px black;
+}
+
+/* Float animation */
+@keyframes floatText{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.container{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    width: 100%;
+    height: auto;
+    left: 0;
+    padding: 90px 0;
+}
+.card{
+    display: flex;
+    gap: 50px;
+    margin:100px auto;
+    width: 1200px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Card slider */
+.card-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--height);
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #fff 10% 90%, transparent);
+    margin: auto;
+
+}
+.card-slider img{
+    position: absolute ;
+    width: var(--width);
+    height: var(--height);
+    object-fit: contain;
+    left: 100%;
+    animation: autoRunSlider var(--duration) linear infinite;
+    animation-delay: 
+    calc((var(--pos) - 1) * (var(--duration) / var(--items-count)));
+}
+
+/* .card-slider:hover img{
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+.card-slider img:hover{
+    filter: grayscale(0);
+}
+.card-slider img{
+    filter: grayscale(0);
+} */
+
+@keyframes autoRunSlider{
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(var(--width)* -1);
+    }
+}
+
+button{
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 50px;
+    min-height: 40px;
+    background-color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.button-in-row{
+    display: flex;
+    flex-direction:row;
+    gap: 30px;
+}
+
+#about-me {
+    scroll-margin-top: 300px; 
+}
+
+#skill {
+    scroll-margin-top: 200px; 
+}
+
+#achievement{
+    scroll-margin-top: 200px; 
+}
+  
+.small-card{
+    width: 200px;
+    height: 300px;
+    border-radius: 25px;
+    background: #fff;
+    position: relative;
+    padding: 10px;
+    border: 2px solid #ccc;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.small-card-details{
+    color: black;
+    height: 100%;
+    gap: 1;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.button-card{
+    transform: translate(-50%, 50%);
+    border-radius: 25px;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.small-card:hover{
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.small-card:hover .button-card{
+    transform: (-50%,50%);
+    opacity: 1;
+}
