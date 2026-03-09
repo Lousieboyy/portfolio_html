@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Main Page</title>
+    <nav>
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="educations.html">Educations</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <div class="container">
+        <span class="back-text">WELCOME</span>
+        <span class="front-text">WELCOME</span>
+        <span class="back-text">WELCOME</span>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <!-- Profile Picture -->
+             <div id="about-me">
+                <img src="../images/kal-bg-remove.png" alt="profile-picture" 
+             style="width: 400px;height: 400px;" class="profile-picture">
+             </div>
+             <div class="text">
+                <span class="text-display">Mohd Haikal bin Rejab</span>
+                <span class="text-display">Comp Science Student</span>
+                <div class="button-in-row">
+                    <button class="button" onclick="window.location.href='#skill';">SKILL</button>
+                    <button class="button" onclick="window.location.href='';">EDUCATION</button>
+                    <button class="button" onclick="window.location.href='#achievement';">ACHIEVEMENT</button>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="skill">
+            <div class="card">
+                <span class="text-display">Software Skills</span>
+                <div class="card-slider">
+                    <img src="../images/c++.png" alt="1" style="--pos: 1">
+                    <img src="../images/html.png" alt="2" style="--pos: 2">
+                    <img src="../images/css.png" alt="3" style="--pos: 3">
+                    <img src="../images/js.png" alt="4" style="--pos: 4">
+                    <img src="../images/python.png" alt="5" style="--pos: 5">
+                    <img src="../images/thonny.png" alt="6" style="--pos: 6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="achievement">
+            <div class="card">
+                <span class="text-display">Achievements</span>
+
+                <div class="small-card">
+                    <div class="small-card-details">
+                        <p>Ficts Buddies</p>
+                        <p> Teaching Basic Scratch 3.0</p>
+                    </div>
+                    <button class="button-card">Further Info</button>
+                </div>
+
+                <div class="small-card">
+                    <div class="small-card-details">
+                        <p>SULAM</p>
+                        <p>Service Learning Malaysia</p>
+                    </div>
+                    <button class="button-card">Further Info</button>
+                </div>
+
+                <div class="small-card">
+                    <div class="small-card-details">
+                        <p>Web Development</p>
+                        <p>Maternal Pregnancy Navigator</p>
+                    </div>
+                    <button class="button-card">Further Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
